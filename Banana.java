@@ -1,6 +1,8 @@
-package AbF;
-public class Banana extends Fruit {
-	public void eat() {
-		System.out.println("eat Banana");
+package pro;
+
+public class Banana extends MyFruit {
+	public Banana() {
+		kind = "Banana";
 	}
+
 }
