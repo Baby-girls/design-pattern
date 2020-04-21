@@ -1,14 +1,25 @@
-package Build;
+package chain;
+
+import java.util.Random;
 
 public class Client {
 	public static void main(String args[]) {
-		MealBuilder mb = (MealBuilder) XMLUtil.getBean();
-		KFCWaiter waiter = new KFCWaiter();
-		waiter.setMealBuilder(mb);
-		Meal meal = waiter.construct();
-		System.out.println("套餐组成：");
-		System.out.println(meal.getFood());
-		System.out.println(meal.getDrink());
+		AbstractFruitSort Bfs, Mfs, Sfs;
+		Bfs = new BigFruitSorting(9);
+		Mfs = new MidFruitSorting(5);
+		Sfs = new smallFruitSorting(2);
+
+		Bfs.setNextSort(Mfs);
+		Mfs.setNextSort(Sfs); // 把链连接起来
+
+		Random rm = new Random();
+		for (int i = 0; i < 1000; i++) {
+			int weight = rm.nextInt(10); // 0~9随机
+			Bfs.sendFruit(weight, "橙子");
+		}
+		Bfs.getFruitBox();
+		Mfs.getFruitBox();
+		Sfs.getFruitBox();
 	}
 
 }
