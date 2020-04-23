@@ -1,7 +1,13 @@
-package AbF;
-public class Fruit {
+package Dec;
 
-    public void eat(){
-    }
+public class Fruit extends Decorating {
+
+	public void PutFruit() {
+		System.out.println("Add Fruit....");
+	}
+
+	public Fruit(IBirthdayCake brBirthdayCake) {
+		super(birthdayCake);
+	}
 
 }
