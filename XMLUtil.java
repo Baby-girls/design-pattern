@@ -1,8 +1,8 @@
-package Build;
+package Visitor;
 
 public class XMLUtil {
 
-	public static MealBuilder getBean() {
+	public static AVisitor getBean() {
 		// TODO Auto-generated method stub
 		return null;
 	}
